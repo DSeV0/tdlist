@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='https://cdn.tailwindcss.com'></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <title>To Do List</title>
+</head>
+<body class='bg-slate-100 dark:bg-slate-900 min-h-screen flex items-center justify-center p-4 transition-colors'>
+    <main class='w-full max-w-xl bg-white dark:bg-slate-800 shadow-lg rounded-xl p-6 transition-colors'>
+        <header class='mb-4'>
+            <div class='flex justify-between items-center'>
+                <div>
+                    <h1 class='text-3xl font-bold text-slate-800 dark:text-white'>Lista de Tareas</h1>
+                    <p class='text-sm text-slate-500 dark:text-slate-400 mt-1'>Crea, elimina y marca tareas como completadas.</p>
+                </div>
+                <button id='dark-mode-toggle' class='p-2 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors' title='Toggle dark mode'>
+                    <span class='text-lg'>🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <form id='todo-form' class='flex gap-2 mb-4' autocomplete='off'>
+            <input id='todo-input' type='text' placeholder='Añadir nueva tarea...' required
+                class='flex-1 rounded-lg border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors' />
+            <button type='submit' class='bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors'>Agregar</button>
+        </form>
+
+        <div class='flex justify-between items-center text-sm text-slate-600 dark:text-slate-400 mb-2'>
+            <span id='total-count'>0 tareas</span>
+            <span id='completed-count'>0 completadas</span>
+        </div>
+
+        <ul id='todo-list' class='space-y-2'></ul>
+
+        <div class='mt-5 text-right'>
+            <button id='clear-all' class='text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 text-sm transition-colors'>Borrar todo</button>
+        </div>
+    </main>
+
+    <script src='assets/js/script.js'></script>
+</body>
+</html>
